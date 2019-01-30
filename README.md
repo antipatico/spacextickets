@@ -77,5 +77,5 @@ You can find the full license under the file LICENSE.txt
 
 ## Authors
 * [Jacopo Scannella](https://github.com/antipatico) - _paranoid_
-* Alessio Lei - _actually has a life_
+* [Alessio Lei](https://github.com/AlessioLei94) - _actually has a life_
 
