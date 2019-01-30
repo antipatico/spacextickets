@@ -1,0 +1,46 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+{% block content %}
+
+    <div>
+        <h2>{% trans "Order confirmation" %}</h2>
+        <div>
+            <p>{% trans "Please check the informations below before proceeding." %}</p>
+            <div class="alert alert-warning">
+                {% trans "You can place <strong>an order at a time!</strong>" %}<br/>
+                {% trans "Placing more than one order at the same time will result in the deletion of the other." %}<br/>
+                {% trans "You will have <strong>10 minutes</strong> to complete your order." %}<br/>
+            </div>
+        </div>
+        <h3>{% trans "Departure"%}</h3>
+        <div class="row">
+            <div class="col-md-3">{{ trip1.departure }} -> {{ trip1.arrival }}</div>
+            <div class="col-md-3">{{ trip1_date }}</div>
+            <div class="col-md-3">{{ trip1.time }} -> {{ trip1.arrival_time }}</div>
+            <div class="col-md-3">{{ seats }} {% trans "ticket" %}</div>
+        </div>
+        {% if trip2 %}
+            <h3>{% trans "Return" %}</h3>
+            <div class="row">
+                <div class="col-md-3">{{ trip2.departure }} -> {{ trip2.arrival }}</div>
+                <div class="col-md-3">{{ trip2_date }}</div>
+                <div class="col-md-3">{{ trip2.time }} -> {{ trip2.arrival_time }}</div>
+                <div class="col-md-3">{{ seats }} {% trans "ticket" %}</div>
+            </div>
+        {% endif %}
+        <hr/>
+    </div>
+    <div>
+
+        {% if not request.user.is_authenticated %}
+            <h2>{% trans "Login" %}</h2>
+            {% include "accounts/login_widget.html" with next=reserve_url %}
+            <hr>
+            <a href="{{ reserve_url }}">{% trans "Continue as Guest" %}</a>
+        {% else %}
+            <a href="{{ reserve_url }}">
+                <button type="submit" class="btn btn-primary btn-block">{% trans "Continue" %}</button>
+            </a>
+        {% endif %}
+    </div>
+{% endblock %}

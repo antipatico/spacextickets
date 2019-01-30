@@ -1,0 +1,9 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+
+{% block header %}
+    <h1>{% trans "Enter your personal informations" %}</h1>
+{% endblock %}
+{% block content %}
+    {% include "accounts/register_widget.html" with guest=True %}
+{% endblock %}

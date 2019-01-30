@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "core/css/core.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "utils/css/utils.css" %}" />
+{% endblock stylesheets %}
+
+
+{% block title %}SpaceX - {% block subtitle %}{{ _("order your space-trip today!") }}{% endblock subtitle %}{% endblock title %}
+
+
+{% block topscripts %}<script type="text/javascript" src="{% static "utils/js/utils.js" %}"></script>{% endblock topscripts %}
+
+
+{% block body %}
+    <div class="container main-wrapper">
+    {% block navbar %}{% include "core/navbar.html" %}{% endblock navbar %}
+        <div class="content">
+        {% block header %}{% endblock header%}
+            <div class="content">
+            {% block content %}{% endblock content %}
+            </div>
+        </div>
+    </div>
+    {% block footer %}
+        <footer class="footer">
+            <div class=" container">
+                <div class="foot-container">
+                    <div class="row">
+                        <div class="col"><span class="align-text-middle align-middle text-muted">Powered by Django</span></div>
+                        <div class="col text-center text-muted">
+                            <span class="align-text-middle align-middle">&copy; 2018</span>
+                        </div>
+                        <div class="col text-right">
+                        {% include "utils/lang_widget.html" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    {% endblock footer %}
+{% endblock body %}

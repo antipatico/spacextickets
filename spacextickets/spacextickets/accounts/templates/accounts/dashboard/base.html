@@ -1,0 +1,23 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+
+{% block header %}
+    <nav>
+        <div class="nav nav-tabs" id="dashboard-nav">
+            <a class="nav-item nav-link" id="nav-orderslist" href="{% url "accounts:dashboard" %}">{% trans "Orders list" %}</a>
+            <a class="nav-item nav-link" id="nav-edituser" href="{% url "accounts:edit_user" %}">{% trans "Edit user" %}</a>
+            <a class="nav-item nav-link" id="nav-changepassword" href="{% url "accounts:change_password" %}">{% trans "Change Password" %}</a>
+            <a class="nav-item nav-link" id="nav-travelers" href="{% url "accounts:travelers" %}">{% trans "Travelers" %}</a>
+            {% if request.user.is_staff %}
+                <a class="nav-item nav-link text-danger" id="nav-admin" href="{% url "admin:index" %}">{% trans "Admin panel" %}</a>
+            {% endif %}
+        </div>
+    </nav>
+    <script type="text/javascript">
+        function setDashboardNavActive() {
+            $("#nav-{% block active_nav %}{% endblock %}").addClass("active");
+        }
+
+        winloadAppend(setDashboardNavActive);
+    </script>
+{% endblock header %}

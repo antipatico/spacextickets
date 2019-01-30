@@ -1,0 +1,8 @@
+{% extends "core/base_site.html" %}
+{% load static i18n %}
+
+{% block content %}
+    <video style="height:300px"  class="embed-responsive embed-responsive-16by9" loop autoplay src="{% static "utils/images/ops.mp4" %}"></video>
+    <br/>
+    <div class="alert alert-danger"><strong>{% trans "You were too slow and somebody reserved the tickets before you did!" %}</strong></div>
+{% endblock content %}

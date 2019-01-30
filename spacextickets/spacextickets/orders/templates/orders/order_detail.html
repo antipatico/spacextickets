@@ -1,0 +1,30 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h4>{% trans "Order n." %}<strong>{{ order.booking_code }}</strong> {% trans "of" %}
+    <strong>{{ order.order_date }}</strong> {% trans "includes: " %}</h4>
+    <ul class="list-group">
+        {% for t in tickets %}
+            <li class="list-group-item">
+                <div class="row">
+                    {% trans "Ticket n." %} {{ t.id }}
+                </div>
+                <small>
+                    <div class="row">
+                        {% trans "Traveler:" %} {{ t.traveler }}<br>
+                        {% trans "from" %} {{ t.trip.departure }} {% trans "to" %} {{ t.trip.arrival }} {% trans "date:" %} {{ t.date }}<br>
+                    </div>
+                </small>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="row">
+    <div class="col">
+            <div class="float-right">
+                <button class="btn btn-primary btn-block" style="margin-top: 2em;" onclick="location.href='{% url "core:index" %}'">{% trans "Back to home" %}</button>
+            </div>
+    </div>
+    </div>
+{% endblock content %}

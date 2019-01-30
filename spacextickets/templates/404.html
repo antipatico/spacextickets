@@ -1,0 +1,8 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+{% block content %}
+    <div class="alert alert-danger">
+        <h3 class="alert-heading">{% trans "Error 404" %}</h3>
+        {% trans "Content not found" %}
+    </div>
+{% endblock %}

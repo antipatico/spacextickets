@@ -1,0 +1,35 @@
+{% extends "accounts/dashboard/base.html" %}
+{% load i18n %}
+{% block active_nav %}travelers{% endblock %}
+{% block content %}
+    {% if travelers %}
+        <ul class="list-group">
+            {% for t in travelers %}
+                <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ t.first_name }} {{ t.last_name }} {% trans "ssn" %}: {{ t.ssn }}<br>
+                        {% trans "Nationality" %}: {{ t.state }} -- {% trans "birthday" %}: {{ t.birthday }}<br>
+                        {% trans "Email" %}: {{ t.email }} {% trans "phone number" %}: {{ t.phone_num}}
+                    </div>
+                        <div class="col-md-2">
+                        <form method="GET" action="{% url "accounts:edit_traveler" traveler_id=t.id %}">
+                                <button type="submit" class="btn btn-primary btn-block">{% trans "Edit" %}</button>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                        <form method="POST" action="{% url "accounts:del_traveler" traveler_id=t.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary btn-block">{% trans "Delete" %}</button>
+                        </form>
+                    </div>
+                </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-warning">
+            {% trans "You don't have any saved traveler yet." %}
+        </div>
+    {% endif %}
+{% endblock content %}

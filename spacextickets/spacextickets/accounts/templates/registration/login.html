@@ -1,0 +1,31 @@
+{% extends 'core/base_site.html' %}
+{% load i18n %}
+
+{% block subtitle %}{% trans "login" %}{% endblock %}
+
+{% block header %}
+    <div class="form-group col-12">
+        <h2>{% trans "Login" %}</h2>
+    </div>
+{% endblock header %}
+{% block content %}
+    {% if not request.user.is_authenticated %}
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        {{ error|escape }}<br/>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    {{ error|escape }}<br/>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% include "accounts/login_widget.html" with next=next form=form %}
+    {% else %}
+        <div class="alert alert-warning">
+            {% trans "You are already logged in!" %}
+        </div>
+    {% endif %}
+{% endblock content %}

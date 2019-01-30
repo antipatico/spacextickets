@@ -1,0 +1,9 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+
+{% block header %}
+    <h1>{% trans "Enter travelers informations" %}</h1>
+{% endblock %}
+{% block content %}
+    {% include "accounts/add_traveler_widget.html" with formset=formset %}
+{% endblock %}

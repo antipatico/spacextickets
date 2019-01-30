@@ -1,0 +1,875 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-12 16:34+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: spacextickets/accounts/admin.py:20
+msgid "Personal info"
+msgstr "Informazioni personali"
+
+#: spacextickets/accounts/admin.py:21 spacextickets/accounts/admin.py:28
+msgid "Account Info"
+msgstr "Informazioni Account"
+
+#: spacextickets/accounts/admin.py:34
+msgid "Full Name"
+msgstr "Nome completo"
+
+#: spacextickets/accounts/apps.py:7
+msgid "SpaceX Tickets Accounts"
+msgstr "SpaceX Tickets Accounts"
+
+#: spacextickets/accounts/models.py:10
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:22
+#: spacextickets/accounts/templates/accounts/register_widget.html:27
+msgid "Male"
+msgstr "Maschio"
+
+#: spacextickets/accounts/models.py:11
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:23
+#: spacextickets/accounts/templates/accounts/register_widget.html:28
+msgid "Female"
+msgstr "Femmina"
+
+#: spacextickets/accounts/models.py:16 spacextickets/accounts/models.py:93
+msgid "first name"
+msgstr "nome"
+
+#: spacextickets/accounts/models.py:17 spacextickets/accounts/models.py:94
+msgid "last name"
+msgstr "cognome"
+
+#: spacextickets/accounts/models.py:18
+msgid "gender"
+msgstr "sesso"
+
+#: spacextickets/accounts/models.py:19
+msgid "registration date"
+msgstr "data di registrazione"
+
+#: spacextickets/accounts/models.py:25
+msgid "Mr."
+msgstr "Sig."
+
+#: spacextickets/accounts/models.py:25
+msgid "Ms."
+msgstr "Sig.ra"
+
+#: spacextickets/accounts/models.py:37
+msgid "base user"
+msgstr "utente base"
+
+#: spacextickets/accounts/models.py:38
+msgid "base users"
+msgstr "utenti base"
+
+#: spacextickets/accounts/models.py:42 spacextickets/accounts/models.py:71
+#: spacextickets/accounts/models.py:95
+msgid "email address"
+msgstr "indirizzo email"
+
+#: spacextickets/accounts/models.py:52
+msgid "Email is a mandatory field for user."
+msgstr "Email è un campo obbligatorio per gli utenti"
+
+#: spacextickets/accounts/models.py:72
+msgid "active"
+msgstr "attivo"
+
+#: spacextickets/accounts/models.py:73
+msgid "is staff"
+msgstr "è staff"
+
+#: spacextickets/accounts/models.py:74
+msgid "is superuser"
+msgstr "è superutente"
+
+#: spacextickets/accounts/models.py:86 spacextickets/accounts/models.py:91
+#: spacextickets/orders/models.py:11
+msgid "user"
+msgstr "utente"
+
+#: spacextickets/accounts/models.py:87
+msgid "users"
+msgstr "utenti"
+
+#: spacextickets/accounts/models.py:92
+msgid "social security number"
+msgstr "numero documento d'identità"
+
+#: spacextickets/accounts/models.py:96
+msgid "nationality"
+msgstr "nazionalità"
+
+#: spacextickets/accounts/models.py:97
+msgid "birthday date"
+msgstr "data di nascita"
+
+#: spacextickets/accounts/models.py:98
+#: spacextickets/accounts/templates/accounts/dashboard/travelers.html:13
+msgid "phone number"
+msgstr "numero di telefono"
+
+#: spacextickets/accounts/models.py:104 spacextickets/orders/models.py:26
+msgid "traveler"
+msgstr "viaggiatore"
+
+#: spacextickets/accounts/models.py:105
+msgid "travelers"
+msgstr "viaggiatori"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:8
+msgid "Passenger n."
+msgstr "Passeggero n."
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:13
+msgid "New traveler"
+msgstr "Nuovo viaggiatore"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:22
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:11
+msgid "First name"
+msgstr "Nome"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:27
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:15
+msgid "Last name"
+msgstr "Cognome"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:32
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:37
+msgid "Ssn"
+msgstr "Numero documento d'identità"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:39
+#: spacextickets/accounts/templates/accounts/dashboard/travelers.html:13
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:29
+#: spacextickets/accounts/templates/accounts/register_widget.html:21
+msgid "Email"
+msgstr "Email"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:44
+#: spacextickets/accounts/templates/accounts/dashboard/travelers.html:12
+msgid "Nationality"
+msgstr "Nazionalità"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:47
+msgid "Select one"
+msgstr "Scegli"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:54
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:41
+msgid "Birthday"
+msgstr "Data di nascita"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:59
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:33
+msgid "Phone number"
+msgstr "Numero di telefono"
+
+#: spacextickets/accounts/templates/accounts/add_traveler_widget.html:69
+#: spacextickets/accounts/templates/accounts/register_widget.html:44
+msgid "Confirm"
+msgstr "Conferma"
+
+#: spacextickets/accounts/templates/accounts/dashboard/base.html:7
+msgid "Orders list"
+msgstr "Lista ordini"
+
+#: spacextickets/accounts/templates/accounts/dashboard/base.html:8
+msgid "Edit user"
+msgstr "Modifica utente"
+
+#: spacextickets/accounts/templates/accounts/dashboard/base.html:9
+msgid "Change Password"
+msgstr "Cambia password"
+
+#: spacextickets/accounts/templates/accounts/dashboard/base.html:10
+msgid "Travelers"
+msgstr "Viaggiatori"
+
+#: spacextickets/accounts/templates/accounts/dashboard/base.html:12
+msgid "Admin panel"
+msgstr "Pannello admin"
+
+#: spacextickets/accounts/templates/accounts/dashboard/edit_traveler.html:8
+#: spacextickets/accounts/templates/accounts/dashboard/edit_user.html:7
+msgid "Your modifications went through successfully!"
+msgstr "Modifiche avvenute con successo"
+
+#: spacextickets/accounts/templates/accounts/dashboard/orders_list.html:14
+#: spacextickets/orders/templates/orders/order_detail.html:5
+msgid "Order n."
+msgstr "Ordine n."
+
+#: spacextickets/accounts/templates/accounts/dashboard/orders_list.html:14
+msgid "of the"
+msgstr "del"
+
+#: spacextickets/accounts/templates/accounts/dashboard/orders_list.html:17
+msgid "Detail"
+msgstr "Dettagli"
+
+#: spacextickets/accounts/templates/accounts/dashboard/orders_list.html:26
+msgid "You haven't completed an order yet!"
+msgstr "Non è stato ancora completato nessun ordine"
+
+#: spacextickets/accounts/templates/accounts/dashboard/password_change.html:3
+msgid "change your password"
+msgstr "cambia password"
+
+#: spacextickets/accounts/templates/accounts/dashboard/password_change.html:16
+msgid "Invalid old password"
+msgstr "Vecchia password non valida"
+
+#: spacextickets/accounts/templates/accounts/dashboard/password_change.html:20
+msgid "Password changed successfully"
+msgstr "Password cambiata"
+
+#: spacextickets/accounts/templates/accounts/dashboard/password_change.html:26
+msgid "Old password"
+msgstr "Vecchia password"
+
+#: spacextickets/accounts/templates/accounts/dashboard/password_change.html:30
+msgid "New password"
+msgstr "Nuova password"
+
+#: spacextickets/accounts/templates/accounts/dashboard/password_change.html:34
+msgid "Confirm password"
+msgstr "Conferma password"
+
+#: spacextickets/accounts/templates/accounts/dashboard/password_change.html:37
+msgid "Change"
+msgstr "Cambia"
+
+#: spacextickets/accounts/templates/accounts/dashboard/traveler_deleted_success.html:15
+msgid "Traveler deleted successfully"
+msgstr "Viaggaitore eliminato correttamente"
+
+#: spacextickets/accounts/templates/accounts/dashboard/travelers.html:11
+msgid "ssn"
+msgstr "numero documento d'identità"
+
+#: spacextickets/accounts/templates/accounts/dashboard/travelers.html:12
+msgid "birthday"
+msgstr "data di nascita"
+
+#: spacextickets/accounts/templates/accounts/dashboard/travelers.html:17
+msgid "Edit"
+msgstr "Modifica"
+
+#: spacextickets/accounts/templates/accounts/dashboard/travelers.html:23
+msgid "Delete"
+msgstr "Elimina"
+
+#: spacextickets/accounts/templates/accounts/dashboard/travelers.html:32
+msgid "You don't have any saved traveler yet."
+msgstr "Nessun viaggiatore salvato"
+
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:20
+#: spacextickets/accounts/templates/accounts/register_widget.html:25
+msgid "Gender"
+msgstr "Sesso"
+
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:45
+msgid "State"
+msgstr "Stato"
+
+#: spacextickets/accounts/templates/accounts/edit_info_widget.html:50
+msgid "Submit"
+msgstr "Conferma"
+
+#: spacextickets/accounts/templates/accounts/login_widget.html:9
+msgid "Email address"
+msgstr "Indirizzo email"
+
+#: spacextickets/accounts/templates/accounts/login_widget.html:13
+#: spacextickets/accounts/templates/accounts/register_widget.html:34
+msgid "Password"
+msgstr "Password"
+
+#: spacextickets/accounts/templates/accounts/login_widget.html:19
+#: spacextickets/accounts/templates/accounts/login_widget.html:21
+#: spacextickets/accounts/templates/accounts/register.html:15
+#: spacextickets/core/templates/core/navbar.html:32
+msgid "Register"
+msgstr "Registrati"
+
+#: spacextickets/accounts/templates/accounts/login_widget.html:24
+#: spacextickets/accounts/templates/registration/login.html:8
+#: spacextickets/core/templates/core/navbar.html:29
+#: spacextickets/orders/templates/orders/confirm.html:36
+msgid "Login"
+msgstr "Accedi"
+
+#: spacextickets/accounts/templates/accounts/register.html:11
+msgid "register"
+msgstr "registrati"
+
+#: spacextickets/accounts/templates/accounts/register.html:21
+msgid "Your registration went through successfully!"
+msgstr "Registrazione avvenuta con successo"
+
+#: spacextickets/accounts/templates/accounts/register.html:39
+msgid "You are already registered!"
+msgstr "Sei già registrato"
+
+#: spacextickets/accounts/templates/accounts/register_widget.html:12
+msgid "First Name"
+msgstr "Nome"
+
+#: spacextickets/accounts/templates/accounts/register_widget.html:16
+msgid "Last Name"
+msgstr "Cognome"
+
+#: spacextickets/accounts/templates/accounts/register_widget.html:38
+msgid "Password confirmation"
+msgstr "Conferma password"
+
+#: spacextickets/accounts/templates/registration/login.html:4
+msgid "login"
+msgstr "login"
+
+#: spacextickets/accounts/templates/registration/login.html:28
+msgid "You are already logged in!"
+msgstr "Accesso già effettuato"
+
+#: spacextickets/accounts/validation.py:14
+msgid "Invalid first name, it can only contains letters and spaces."
+msgstr "Nome non valido, può contenere solamente lettere e spazi"
+
+#: spacextickets/accounts/validation.py:22
+msgid "Invalid last name, it can only contains letters and spaces."
+msgstr "Cognome non valido, può contenere solamente lettere e spazi"
+
+#: spacextickets/accounts/validation.py:28
+msgid "Password must be at least 8 characters long."
+msgstr "La password deve essere di almeno 8 caratteri"
+
+#: spacextickets/accounts/validation.py:33
+msgid "Passwords don't match"
+msgstr "Le password non coincidono"
+
+#: spacextickets/core/admin.py:20
+msgid "number of cities"
+msgstr "numero di città"
+
+#: spacextickets/core/admin.py:35 spacextickets/core/models.py:37
+#: spacextickets/core/models.py:43
+msgid "state"
+msgstr "stato"
+
+#: spacextickets/core/admin.py:36 spacextickets/core/models.py:31
+msgid "continent"
+msgstr "contitnente"
+
+#: spacextickets/core/apps.py:7
+msgid "SpaceX Tickets Core"
+msgstr "SpaceX Tickets Core"
+
+#: spacextickets/core/models.py:9
+msgid "Africa"
+msgstr "Africe"
+
+#: spacextickets/core/models.py:10
+msgid "Antarctica"
+msgstr "Antartide"
+
+#: spacextickets/core/models.py:11
+msgid "Asia"
+msgstr "Asia"
+
+#: spacextickets/core/models.py:12
+msgid "Europe"
+msgstr "Europa"
+
+#: spacextickets/core/models.py:13
+msgid "North America"
+msgstr "Nord America"
+
+#: spacextickets/core/models.py:14
+msgid "South America"
+msgstr "Sud America"
+
+#: spacextickets/core/models.py:15
+msgid "Oceania"
+msgstr "Oceania"
+
+#: spacextickets/core/models.py:19
+msgid "Monday"
+msgstr "Lunedì"
+
+#: spacextickets/core/models.py:20
+msgid "Tuesday"
+msgstr "Martedì"
+
+#: spacextickets/core/models.py:21
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#: spacextickets/core/models.py:22
+msgid "Thursday"
+msgstr "Giovedì"
+
+#: spacextickets/core/models.py:23
+msgid "Friday"
+msgstr "Venerdì"
+
+#: spacextickets/core/models.py:24
+msgid "Saturday"
+msgstr "Sabato"
+
+#: spacextickets/core/models.py:25
+msgid "Sunday"
+msgstr "Domenica"
+
+#: spacextickets/core/models.py:30 spacextickets/core/models.py:42
+msgid "name"
+msgstr "nome"
+
+#: spacextickets/core/models.py:38
+msgid "states"
+msgstr "stati"
+
+#: spacextickets/core/models.py:54
+msgid "city"
+msgstr "città"
+
+#: spacextickets/core/models.py:55
+msgid "cities"
+msgstr "città"
+
+#: spacextickets/core/models.py:61
+msgid "departure"
+msgstr "partenza"
+
+#: spacextickets/core/models.py:62
+msgid "arrival"
+msgstr "arrivo"
+
+#: spacextickets/core/models.py:63
+msgid "day of the week"
+msgstr "giorno della settimana"
+
+#: spacextickets/core/models.py:64
+msgid "departure time"
+msgstr "orario di partenza"
+
+#: spacextickets/core/models.py:64
+msgid "in UTC time"
+msgstr "in formato UTC"
+
+#: spacextickets/core/models.py:65
+msgid "duration"
+msgstr "durata"
+
+#: spacextickets/core/models.py:67
+msgid "seats"
+msgstr "posti a sedere"
+
+#: spacextickets/core/models.py:67
+msgid "maximum number"
+msgstr "numero massimo"
+
+#: spacextickets/core/models.py:69
+msgid "price"
+msgstr "prezzo"
+
+#: spacextickets/core/models.py:69
+msgid "in EUR"
+msgstr "in EUR"
+
+#: spacextickets/core/models.py:82
+msgid "scheduled trip"
+msgstr "viaggio pianificato"
+
+#: spacextickets/core/models.py:83
+msgid "scheduled trips"
+msgstr "viaggi pianificati"
+
+#: spacextickets/core/templates/core/about.html:6
+msgid ""
+"SpaceX has gained worldwide attention for a series of historic milestones. "
+"It is the only private company capable of returning a spacecraft from low "
+"Earth orbit, which it first accomplished in 2010. The company made history "
+"again in 2012 when its Dragon spacecraft became the first commercial "
+"spacecraft to deliver cargo to and from the International Space Station."
+"<br>SpaceX successfully achieved the historic first reflight of an orbital "
+"class rocket in 2017, and the company now regularly launches flight-proven "
+"rockets. In 2018, SpaceX began launching Falcon Heavy, the world’s most "
+"powerful operational rocket by a factor of two."
+msgstr ""
+"SpaceX ha guadagnato l'attenzione di tutto il mondo per una serie di "
+"traguardi storici. È l'unica società privata in grado di far tornare un "
+"veicolo spaziale dall'Orbita terrestre, realizzato per la prima volta nel "
+"2010. La società ha fatto la storiadi nuovo nel 2012 quando la sua navicella "
+"Dragon è diventata il primo veicolo spaziale per trasportare merci da e "
+"verso la Stazione Spaziale Internazionale.<br> SpaceX ha raggiunto con "
+"successo il primo storico riflettore di un razzo di classe orbitale nel "
+"2017, e l'azienda ora lancia regolarmente razzi a prova di volo. Nel 2018, "
+"SpaceX ha iniziato a lanciare Falcon Heavy, il razzo piùpotente al mondo di "
+"fattore operativo due."
+
+#: spacextickets/core/templates/core/base_site.html:12
+msgid "order your space-trip today!"
+msgstr "ordina il tuo viaggio spaziale oggi!"
+
+#: spacextickets/core/templates/core/navbar.html:12
+msgid "About"
+msgstr "Chi siamo"
+
+#: spacextickets/core/templates/core/navbar.html:15
+msgid "Maps"
+msgstr "Mappe"
+
+#: spacextickets/core/templates/core/navbar.html:25
+msgid "Logout"
+msgstr "Esci"
+
+#: spacextickets/core/validation.py:11
+msgid "There's already another city named like that in that state."
+msgstr "Esiste già una città con lo stesso nome in questo stato."
+
+#: spacextickets/core/validation.py:17
+msgid ""
+"The trip's duration must be positive. We can't travel back in time (not "
+"yet!)."
+msgstr "La durata del viaggio deve essere positiva"
+
+#: spacextickets/core/validation.py:22
+msgid "There must be at least one seat."
+msgstr "Ci deve essere almeno un posto a sedere"
+
+#: spacextickets/core/validation.py:27
+msgid "Trip's price must be positive."
+msgstr "Il prezzo del viaggio deve essere positivo"
+
+#: spacextickets/core/validation.py:32
+msgid "Departing city can't be the same as the arrival one."
+msgstr "La città di partenza non può essere la stessa di arrivo."
+
+#: spacextickets/core/validation.py:40
+msgid ""
+"There's another trip scheduled identical to the one you are trying to add."
+msgstr "Il viaggio che si sta inserendo esiste già"
+
+#: spacextickets/core/validation.py:47
+msgid "Staff accounts can't book a trip."
+msgstr "Un membro dello staff non può prenotare un viaggio."
+
+#: spacextickets/core/validation.py:49
+msgid "User must be active to be able to book a trip."
+msgstr "L'utente deve essere attuvo per prenotare un viaggio."
+
+#: spacextickets/core/validation.py:55
+msgid "Can't book a trip back in the past."
+msgstr "Impossibile prenotare un viaggio nel passato."
+
+#: spacextickets/orders/apps.py:7
+msgid "SpaceX Tickets Orders"
+msgstr "SpaceX Tickets Orders"
+
+#: spacextickets/orders/models.py:12
+msgid "order date"
+msgstr "data dell'ordine"
+
+#: spacextickets/orders/models.py:13
+msgid "booking code"
+msgstr "codice prenotazine"
+
+#: spacextickets/orders/models.py:14
+msgid "temporary_order"
+msgstr "ordine_temporaneo"
+
+#: spacextickets/orders/models.py:20 spacextickets/orders/models.py:25
+msgid "order"
+msgstr "ordine"
+
+#: spacextickets/orders/models.py:21
+msgid "orders"
+msgstr "ordini"
+
+#: spacextickets/orders/models.py:27
+msgid "trip"
+msgstr "viaggio"
+
+#: spacextickets/orders/models.py:28
+msgid "departing date"
+msgstr "data di partenza"
+
+#: spacextickets/orders/models.py:29
+msgid "ticket code"
+msgstr "codice biglietto"
+
+#: spacextickets/orders/models.py:35
+#: spacextickets/orders/templates/orders/confirm.html:20
+#: spacextickets/orders/templates/orders/confirm.html:28
+msgid "ticket"
+msgstr "biglietto"
+
+#: spacextickets/orders/models.py:36
+msgid "tickets"
+msgstr "biglietti"
+
+#: spacextickets/orders/templates/orders/back_and_forth_error.html:5
+msgid "You shouldn't go back and forth while ordering."
+msgstr "Non dovresti andare avanti e indietro nelle pagine mentre ordini."
+
+#: spacextickets/orders/templates/orders/back_and_forth_error.html:6
+msgid "Your preceeeding order has been deleted."
+msgstr "Il tuo ordine corrente è stato eliminato"
+
+#: spacextickets/orders/templates/orders/confirm.html:6
+msgid "Order confirmation"
+msgstr "Conferma ordine"
+
+#: spacextickets/orders/templates/orders/confirm.html:8
+msgid "Please check the informations below before proceeding."
+msgstr "Controllare le informazioni sottostanti prima di procedere"
+
+#: spacextickets/orders/templates/orders/confirm.html:10
+msgid "You can place <strong>an order at a time!</strong>"
+msgstr "Puoi fare <strong>un ordine per volta!</strong>"
+
+#: spacextickets/orders/templates/orders/confirm.html:11
+msgid ""
+"Placing more than one order at the same time will result in the deletion of "
+"the other."
+msgstr "Fare più di un ordine per volta comporterà l'eliminazione del primo."
+
+#: spacextickets/orders/templates/orders/confirm.html:12
+msgid "You will have <strong>10 minutes</strong> to complete your order."
+msgstr "Avrai <strong>10 minuti</strong> per completare l'ordine."
+
+#: spacextickets/orders/templates/orders/confirm.html:15
+#: spacextickets/search/forms.py:9
+#: spacextickets/search/templates/search/search_widget.html:16
+#: spacextickets/search/templates/search/search_widget.html:48
+msgid "Departure"
+msgstr "Partenza"
+
+#: spacextickets/orders/templates/orders/confirm.html:23
+msgid "Return"
+msgstr "Ritorno"
+
+#: spacextickets/orders/templates/orders/confirm.html:39
+msgid "Continue as Guest"
+msgstr "Continua come Guest"
+
+#: spacextickets/orders/templates/orders/confirm.html:42
+#: spacextickets/search/templates/search/results.html:33
+msgid "Continue"
+msgstr "Continua"
+
+#: spacextickets/orders/templates/orders/expired_error.html:7
+msgid "The order you were trying to complete expired!"
+msgstr "L'ordine che stavi completando è scaduto!"
+
+#: spacextickets/orders/templates/orders/order_detail.html:5
+msgid "of"
+msgstr "del"
+
+#: spacextickets/orders/templates/orders/order_detail.html:6
+msgid "includes: "
+msgstr "include: "
+
+#: spacextickets/orders/templates/orders/order_detail.html:11
+msgid "Ticket n."
+msgstr "Biglietto n."
+
+#: spacextickets/orders/templates/orders/order_detail.html:15
+msgid "Traveler:"
+msgstr "Viaggiatore:"
+
+#: spacextickets/orders/templates/orders/order_detail.html:16
+msgid "from"
+msgstr "da"
+
+#: spacextickets/orders/templates/orders/order_detail.html:16
+msgid "to"
+msgstr "a"
+
+#: spacextickets/orders/templates/orders/order_detail.html:16
+msgid "date:"
+msgstr "data:"
+
+#: spacextickets/orders/templates/orders/order_detail.html:26
+msgid "Back to home"
+msgstr "Torna alla home"
+
+#: spacextickets/orders/templates/orders/step1.html:5
+msgid "Enter your personal informations"
+msgstr "Inserisci le tue informazioni personali"
+
+#: spacextickets/orders/templates/orders/step2.html:5
+msgid "Enter travelers informations"
+msgstr "Inserisci informazioni viaggiatori"
+
+#: spacextickets/orders/templates/orders/step3.html:4
+msgid "Payment"
+msgstr "Pagamento"
+
+#: spacextickets/orders/templates/orders/step3.html:8
+msgid "Trip"
+msgstr "Viaggio"
+
+#: spacextickets/orders/templates/orders/step3.html:9
+#: spacextickets/search/templates/search/search_widget.html:33
+#: spacextickets/search/templates/search/search_widget.html:75
+msgid "Seats"
+msgstr "Posti a sedere"
+
+#: spacextickets/orders/templates/orders/step3.html:10
+#: spacextickets/search/templates/search/results.html:22
+msgid "Price"
+msgstr "Prezzo"
+
+#: spacextickets/orders/templates/orders/step3.html:21
+msgid "Total"
+msgstr "Totale"
+
+#: spacextickets/orders/templates/orders/step3.html:27
+msgid "Pay"
+msgstr "Paga"
+
+#: spacextickets/orders/templates/orders/too_slow_error.html:7
+msgid "You were too slow and somebody reserved the tickets before you did!"
+msgstr ""
+"Sei stato troppo lento e qualcuno ha prenotato i biglietti prima di te!"
+
+#: spacextickets/search/apps.py:7
+msgid "SpaceX Tickets Search"
+msgstr "SpaceX Tickets Search"
+
+#: spacextickets/search/forms.py:10
+#: spacextickets/search/templates/search/search_widget.html:20
+#: spacextickets/search/templates/search/search_widget.html:52
+msgid "Arrival"
+msgstr "Arrivo"
+
+#: spacextickets/search/forms.py:11
+#: spacextickets/search/templates/search/search_widget.html:24
+#: spacextickets/search/templates/search/search_widget.html:56
+msgid "Departure date"
+msgstr "Data partenza"
+
+#: spacextickets/search/forms.py:13
+#: spacextickets/search/templates/search/search_widget.html:66
+msgid "Return date"
+msgstr "Data ritorno"
+
+#: spacextickets/search/forms.py:15
+msgid "Number of seats"
+msgstr "Numero di posti a sedere"
+
+#: spacextickets/search/forms.py:27
+msgid "Return date must be greater or equal than departure date."
+msgstr "La data di ritorno deve essere maggiore o uguale di quella di partenza"
+
+#: spacextickets/search/forms.py:36
+msgid "Return time must be greater than departure time."
+msgstr "L'orario di ritorno deve essere maggiore di quello di partenza."
+
+#: spacextickets/search/forms.py:39 spacextickets/search/forms.py:45
+#: spacextickets/search/forms.py:60
+msgid "Can't search a trip back in the past."
+msgstr "Impossibile cercare un viaggio nel passato"
+
+#: spacextickets/search/forms.py:51
+msgid "Number of seats must be more than zero"
+msgstr "Il numero di posti a sedere deve essere maggiore di zero"
+
+#: spacextickets/search/templates/search/results.html:4
+msgid "search results"
+msgstr "risultati della ricerca"
+
+#: spacextickets/search/templates/search/results.html:8
+msgid "No trips found"
+msgstr "Nessun viaggio trovato"
+
+#: spacextickets/search/templates/search/results.html:11
+msgid "Results"
+msgstr "Risultati"
+
+#: spacextickets/search/templates/search/results.html:22
+msgid "Departure time"
+msgstr "Orario di partenza"
+
+#: spacextickets/search/templates/search/results.html:22
+msgid "seats available"
+msgstr "posti disponibili"
+
+#: spacextickets/search/templates/search/results.html:48
+msgid "Order"
+msgstr "Ordina"
+
+#: spacextickets/search/templates/search/search_widget.html:5
+msgid "One Way"
+msgstr "Andata"
+
+#: spacextickets/search/templates/search/search_widget.html:7
+msgid "Round Trip"
+msgstr "Andata e Ritorno"
+
+#: spacextickets/search/templates/search/search_widget.html:17
+#: spacextickets/search/templates/search/search_widget.html:49
+msgid "Rome"
+msgstr "Roma"
+
+#: spacextickets/search/templates/search/search_widget.html:21
+#: spacextickets/search/templates/search/search_widget.html:53
+msgid "Milan"
+msgstr "Milano"
+
+#: spacextickets/search/templates/search/search_widget.html:29
+#: spacextickets/search/templates/search/search_widget.html:61
+#: spacextickets/search/templates/search/search_widget.html:71
+msgid "Time"
+msgstr "Ora"
+
+#: spacextickets/search/templates/search/search_widget.html:38
+#: spacextickets/search/templates/search/search_widget.html:80
+msgid "Search"
+msgstr "Cerca"
+
+#: spacextickets/settings.py:122
+msgid "English"
+msgstr "Inglese"
+
+#: spacextickets/settings.py:123
+msgid "Italian"
+msgstr "Italiano"
+
+#: spacextickets/utils/apps.py:7
+msgid "SpaceX Tickets Utils"
+msgstr "SpaceX Tickets Utils"
+
+#: templates/404.html:5
+msgid "Error 404"
+msgstr "Errore 404"
+
+#: templates/404.html:6
+msgid "Content not found"
+msgstr "Contenuto non trovato"
+
+#: templates/admin/base_site.html:3
+msgid "SpaceX tickets site admin"
+msgstr "SpaceX tickets site admin"
+
+#: templates/admin/base_site.html:6
+msgid "SpaceX tickets administration"
+msgstr "SpaceX tickets administration"

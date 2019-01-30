@@ -1,0 +1,10 @@
+* Localization (en/it)
+* Search and plan for a trip giving the date, starting station and arriving station
+* User registration / login
+* Guest booking
+* Staff interface
+* Mobile Friendly
+* Google Maps
+* Save travelers information for registered users
+* Reserve tickets before the order is completed
+* User dashboard

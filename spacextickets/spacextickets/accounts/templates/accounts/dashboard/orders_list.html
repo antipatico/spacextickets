@@ -1,0 +1,29 @@
+{% extends "accounts/dashboard/base.html" %}
+{% load i18n %}
+
+{% block active_nav %}orderslist{% endblock %}
+
+{% block content %}{% load i18n %}
+    {% if orders %}
+        <ul class="list-group">
+            {% for o in orders %}
+                <form method="GET" action="{% url "orders:detail" order_id=o.booking_code %}">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            {% trans "Order n." %} <strong>{{ o.booking_code }}</strong> {% trans "of the" %} <strong>{{ o.order_date }}</strong>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary btn-block">{% trans "Detail" %}</button>
+                        </div>
+                    </div>
+                </li>
+                </form>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-warning">
+            {% trans "You haven't completed an order yet!" %}
+        </div>
+    {% endif %}
+{% endblock content %}

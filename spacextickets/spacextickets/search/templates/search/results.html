@@ -1,0 +1,55 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+
+{% block subtitle %}{% trans "search results" %}{% endblock %}
+
+{% block content %}
+    {% if not available_trips %}
+        <div class="alert alert-danger">{% trans "No trips found" %}</div>
+        {% include "search/search_widget.html" with form=form%}
+    {% else %}
+        <h1>{% trans "Results" %}</h1>
+        {% for trip, available_seats in available_trips %}
+            {% if roundtrip %}
+                <form method="POST" action="{% url 'search:return' %}">
+            {% else %}
+                <form method="POST" action="{% url 'orders:confirm' %}">
+            {% endif %}
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-10">
+                <h3>{{ trip.departure }} → {{ trip.arrival }}</h3>
+                {% trans "Departure time" %}: {{ trip.time }}, {% trans "Price" %}: {{ trip.price }}€, {{ available_seats }}/{{ trip.seats }} {% trans "seats available" %}
+            </div>
+            <div class="col-md-2">
+                <input type="hidden" name="seats" value="{{ seats }}">
+                {% if roundtrip %}
+                    {# We are searching a round trip (first step) #}
+                    <input type="hidden" name="trip1_id" value="{{ trip.id }}">
+                    <input type="hidden" name="trip1_date" value="{{ trip1_date }}">
+                    <input type="hidden" name="trip2_date" value="{{ trip2_date }}">
+                    <input type="hidden" name="trip2_time" value="{{ trip2_time }}">
+                    <button type="submit" class="btn btn-primary btn-block"
+                            style="margin-top: 0.3em">{% trans "Continue" %}</button>
+                {% else %}
+                    {# Either the second step of a roundtrip or the first one of a oneway search #}
+                    {% if trip1_id %}
+                        {# We're on the second step of a roundtrip search #}
+                        <input type="hidden" name="trip1_id" value="{{ trip1_id }}">
+                        <input type="hidden" name="trip1_date" value="{{ trip1_date }}">
+                        <input type="hidden" name="trip2_id" value="{{ trip.id }}">
+                        <input type="hidden" name="trip2_date" value="{{ trip2_date }}">
+                    {% else %}
+                        {# We're on the oneway search #}
+                        <input type="hidden" name="trip1_id" value="{{ trip.id }}">
+                        <input type="hidden" name="trip1_date" value="{{ trip1_date }}">
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary btn-block"
+                            style="margin-top: 0.3em">{% trans "Order" %}</button>
+                {% endif %}
+            </div>
+        </div>
+        </form>
+        {% endfor %}
+    {% endif %}
+{% endblock content %}

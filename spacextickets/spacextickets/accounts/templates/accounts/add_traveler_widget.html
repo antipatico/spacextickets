@@ -1,0 +1,121 @@
+{% load i18n %}
+
+<form method="POST" action="{% url "orders:step3" %}">
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {% csrf_token %}
+        <div class="row">
+            <label style="margin-left: 0.5em">{% trans "Passenger n." %} {{ forloop.counter }}</label>
+        </div>
+        {% if travelers %}
+            <select class="form-control" name="form-{{ forloop.counter0 }}-traveler_id"
+                    id="id_form-{{ forloop.counter0 }}-traveler_id">
+                <option value="" selected>-- {% trans "New traveler" %} --</option>
+                {% for traveler in travelers %}
+                    <option value="{{ traveler.id }}">{{ traveler.first_name }} {{ traveler.last_name }}</option>
+                {% endfor %}
+            </select>
+        {% endif %}
+        <div id="id_form-{{ forloop.counter0 }}">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="id_form-{{ forloop.counter0 }}-first_name">{% trans "First name" %}:</label>
+                <input name="form-{{ forloop.counter0 }}-first_name" id="id_form-{{ forloop.counter0 }}-first_name"
+                       type="text" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="id_form-{{ forloop.counter0 }}-last_name">{% trans "Last name" %}:</label>
+                <input name="form-{{ forloop.counter0 }}-last_name" id="id_form-{{ forloop.counter0 }}-last_name"
+                       type="text" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="id_form-{{ forloop.counter0 }}-ssn">{% trans "Ssn" %}:</label>
+                <input name="form-{{ forloop.counter0 }}-ssn" id="id_form-{{ forloop.counter0 }}-ssn" type="text"
+                       class="form-control" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="id_form-{{ forloop.counter0 }}-email">{% trans "Email" %}:</label>
+                <input name="form-{{ forloop.counter0 }}-email" id="id_form-{{ forloop.counter0 }}-email" type="email"
+                       class="form-control" required>
+            </div>
+            <div class="col-md-3">
+                <label for="id_form-{{ forloop.counter0 }}-state">{% trans "Nationality" %}:</label>
+                <select class="form-control"
+                        required name="form-{{ forloop.counter0 }}-state" id="id_form-{{ forloop.counter0 }}-state">
+                    <option selected disabled>-- {% trans "Select one" %} --</option>
+                    {% for city in form.state.field.queryset %}
+                        <option value="{{ city.id }}">{{ city }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="id_form-{{ forloop.counter0 }}-birthday">{% trans "Birthday" %}:</label>
+                <input name="form-{{ forloop.counter0 }}-birthday" id="id_form-{{ forloop.counter0 }}-birthday"
+                       type="date" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+                <label for="id_form-{{ forloop.counter0 }}-phone_num">{% trans "Phone number" %}:</label>
+                <input name="form-{{ forloop.counter0 }}-phone_num" id="id_form-{{ forloop.counter0 }}-phone_num"
+                       type="text" class="form-control">
+            </div>
+        </div>
+        {#            {{ form.errors }} {{ form.non_field_errors }}#}
+        </div>
+        <hr>
+    {% endfor %}
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top: 1em;">{% trans "Confirm" %}</button>
+    </div>
+</form>
+
+
+{% if travelers %}
+    <!-- TRAVELER WIDGET SCRIPT !-->
+    <script type="text/javascript">
+        function hideTravelerForm(form_id) {
+            let s = "#" + form_id;
+            let form = $(s);
+            $(s+"-first_name").val("none");
+            $(s+"-last_name").val("none");
+            $(s+"-ssn").val("0123456789");
+            $(s+"-email").val("none@no.ne");
+            $(s+"-state").val(1);
+            $(s+"-birthday").val("1990-01-01");
+            form.hide();
+        }
+
+        function showTravelerForm(form_id) {
+            let s = "#" + form_id;
+            let form = $(s);
+            $(s+"-first_name").val("");
+            $(s+"-last_name").val("");
+            $(s+"-ssn").val("");
+            $(s+"-email").val("");
+            $(s+"-birthday").val("");
+            $(s+"-state").val("");
+            form.show();
+        }
+
+        function onTravelerSelectChange() {
+            let id = $(this).attr("id");
+            let form_id = id.substring(0,id.indexOf("-traveler_id"));
+            let selected = $("#" + id + " option:selected");
+
+            if(selected.val() === "") {
+                showTravelerForm(form_id);
+            } else {
+                hideTravelerForm(form_id);
+            }
+        }
+
+        function initTravelerWidget() {
+            {% for form in formset %}
+                $("#id_form-{{ forloop.counter0 }}-traveler_id").change(onTravelerSelectChange);
+            {% endfor %}
+        }
+
+        winloadAppend(initTravelerWidget);
+    </script>
+{% endif %}

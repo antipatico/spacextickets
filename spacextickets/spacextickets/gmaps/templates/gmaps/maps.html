@@ -1,0 +1,96 @@
+{% extends "core/base_site.html" %}
+
+{% block content %}
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+    <script type="text/javascript">
+        let map;
+        let markers = [];
+        let infoWindows = [];
+        let destinations = [];
+
+        function initMap() {
+            let mapProp = {
+                center: new google.maps.LatLng(44.633793, 10.944750),
+                zoom: 5,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+
+        function loadMarkers() {
+            {% for marker, _ in map_data %}
+                markers[{{ forloop.counter }}] = new google.maps.Marker({
+                    position: new google.maps.LatLng({{ marker.lat|stringformat:"f" }}, {{ marker.long|stringformat:"f" }})
+                    {#  animation: google.maps.Animation.BOUNCE #}
+                });
+
+                markers[{{ forloop.counter }}].setMap(map);
+            {% endfor %}
+        }
+
+        function initInfoWindows() {
+            {% for marker, _ in map_data %}
+                infoWindows[{{ forloop.counter }}] = new google.maps.InfoWindow({"content":"{{ marker.city.name }}"});
+            {% endfor %}
+        }
+
+        function initDestinations() {
+            {% for marker, destinations in map_data %}
+                destinations[{{ forloop.counter }}] = [];
+                {% for destination in destinations %}
+
+                    destinations[{{ forloop.parentloop.counter }}][{{ forloop.counter }}] =
+                        new google.maps.Polyline({
+                            path: [ {lat:{{marker.lat|stringformat:"f"}}, lng:{{marker.long|stringformat:"f"}}},
+                                {lat: {{destination.lat|stringformat:"f"}}, lng:{{ destination.long|stringformat:"f" }} }],
+                            geodesic: true,
+                            strokeColor: '#FF0000',
+                            strokeOpacity: 1.0,
+                            strokeWeight: 2
+                        });
+                {% endfor %}
+            {% endfor %}
+        }
+
+        function appendHandlers() {
+            markers.forEach(function(marker, i) {
+                marker.addListener('click', function(e) { onMarkerClick(marker, infoWindows[i], destinations[i]); });
+            });
+            map.addListener('click', function() {cleanMap();});
+        }
+
+        function cleanMap() {
+            {#  markers.forEach(function(marker) #}
+            {#    marker.setAnimation(null); #}
+            {# }); #}
+            infoWindows.forEach(function(infoWindow) {
+                infoWindow.close();
+            });
+            destinations.forEach(function(marker) {
+                marker.forEach(function(destination) {
+                  destination.setMap(null);
+                });
+            });
+        }
+
+        function onMarkerClick(marker, infoWindow, destinations) {
+            cleanMap();
+            {# marker.setAnimation(google.maps.Animation.BOUNCE); #}
+            infoWindow.open(map, marker);
+            destinations.forEach(function(destination) {
+               destination.setMap(map);
+            });
+        }
+
+        winloadAppend(initMap);
+        winloadAppend(loadMarkers);
+        winloadAppend(initInfoWindows);
+        winloadAppend(initDestinations);
+        winloadAppend(appendHandlers);
+
+    </script>
+{% endblock content %}
+{% block scripts %}
+    {{ block.super }}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiKryFIlphrhj7i_PCLN1x4gKbSFHGGyw&language={{ LANGUAGE_CODE|default:"en" }}&callback=initMap"></script>
+{% endblock scripts %}

@@ -1,0 +1,17 @@
+{% extends "accounts/dashboard/base.html" %}
+{% load i18n %}
+
+{% block additionalmeta %}
+    {{ block.super }}
+    {% if success %}
+        <meta http-equiv="refresh" content="3;url={% url "accounts:travelers" %}" />
+    {% endif %}
+{% endblock %}
+
+{% block active_nav %}travelers{% endblock %}
+
+{% block content %}
+        <div class="alert alert-success">
+        {% trans "Traveler deleted successfully" %}
+        </div>
+{% endblock %}

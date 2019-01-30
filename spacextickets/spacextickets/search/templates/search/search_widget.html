@@ -1,0 +1,109 @@
+{% load i18n %}
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-oneway-tab" data-toggle="tab" href="#nav-oneway" role="tab"
+           aria-controls="nav-oneway" aria-selected="true">{% trans "One Way" %}</a>
+        <a class="nav-item nav-link" id="nav-roundtrip-tab" data-toggle="tab" href="#nav-roundtrip" role="tab"
+           aria-controls="nav-roundtrip" aria-selected="false">{% trans "Round Trip" %}</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-oneway" role="tabpanel" aria-labelledby="nav-oneway-tab">
+        <form method="POST" action="{% url "search:search" %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="departure">{% trans "Departure" %}</label>
+                    <input name="departure" type="text" class="form-control" placeholder="{% trans "Rome" %}" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="arrival">{% trans "Arrival" %}</label>
+                    <input name="arrival" type="text" class="form-control" placeholder="{% trans  "Milan" %}" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="dep_date">{% trans "Departure date" %}</label>
+                    <input name="dep_date" type="date" class="form-control" value="{% now "Y-m-d" %}"
+                           min="{% now "Y-m-d" %}" required="True">
+                </div>
+                <div class="col-md-2">
+                    <label for="dep_time">{% trans "Time" %}</label>
+                    <input name="dep_time" type="time" value="--:--" class="form-control">
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <label for="seats">{% trans "Seats" %}</label>
+                    <input name="seats" type="number" class="form-control" required placeholder="" value=1 min=1>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <button type="submit" class="btn btn-primary btn-block"
+                            style="margin-top: 2em;">{% trans "Search" %}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="tab-pane fade" id="nav-roundtrip" role="tabpanel" aria-labelledby="nav-roundtrip-tab">
+        <form method="POST" action="{% url "search:search" %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="departure">{% trans "Departure" %}</label>
+                    <input name="departure" type="text" class="form-control" placeholder="{% trans "Rome" %}" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="arrival">{% trans "Arrival" %}</label>
+                    <input name="arrival" type="text" class="form-control" placeholder="{% trans  "Milan" %}" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="dep_date">{% trans "Departure date" %}</label>
+                    <input name="dep_date" type="date" class="form-control" required value="{% now "Y-m-d" %}"
+                           min="{% now "Y-m-d" %}">
+                </div>
+                <div class="col-md-2">
+                    <label for="dep_time">{% trans "Time" %}</label>
+                    <input name="dep_time" type="time" value="--:--" class="form-control">
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-4">
+                    <label for="ret_date">{% trans "Return date" %}</label>
+                    <input name="ret_date" id="ret_date" type="date" class="form-control" value="{% now "Y-m-d" %}"
+                           min="{% now "Y-m-d" %}">
+                </div>
+                <div class="col-md-2">
+                    <label for="ret_time">{% trans "Time" %}</label>
+                    <input name="ret_time" id="ret_time" type="time" value="--:--" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    <label for="seats">{% trans "Seats" %}</label>
+                    <input name="seats" type="number" class="form-control" required placeholder="" value=1 min=1>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary btn-block"
+                            style="margin-top: 2em;">{% trans "Search" %}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Transpose data Quality of Life scripts !-->
+<script type="text/javascript">
+    function transposeInput(ot, nt, fieldName) {
+        let oi = ot.find('input[name="'+fieldName+'"]');
+        let ni = nt.find('input[name="'+fieldName+'"]');
+        if(oi.val()) {
+            ni.val(oi.val());
+        }
+    }
+
+    function transposeSearchData(event) {
+        // Get the divs from the tab buttons (passed by the event)
+        let oldTab = $($(event.relatedTarget).attr("href"));
+        let newTab = $($(event.target).attr("href"));
+
+        // Transpose the values
+        let toTranspose = ["departure", "arrival", "dep_date", "dep_time", "seats"];
+
+        toTranspose.forEach(function(fieldName) {
+            transposeInput(oldTab, newTab, fieldName)
+        });
+    }
+    winloadAppend(function() { $('a[data-toggle="tab"]').on('show.bs.tab',  transposeSearchData); });
+</script>

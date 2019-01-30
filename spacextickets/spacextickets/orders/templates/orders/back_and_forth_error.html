@@ -1,0 +1,7 @@
+{% extends "core/base_site.html" %}
+{% load static i18n %}
+
+{% block content %}
+    <div class="alert alert-danger">{% trans "You shouldn't go back and forth while ordering." %}<br/>
+    {% trans "Your preceeeding order has been deleted." %}</div>
+{% endblock content %}

@@ -1,0 +1,42 @@
+body {
+    background-color: #343a40;
+    /* background-image: url("../stars.jpg"); */
+}
+
+a.deco-none {
+    color:#000000 !important;
+    text-decoration:none;
+
+}
+
+.navbar-brand {
+    font-size: 1.69rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.content {
+    background-color: #fff;
+    padding: 10px
+    /*padding-bottom: calc(100vh - 45px);*/
+}
+.search-widget{
+    padding:10px;
+}
+.footer {
+    height: 45px; /* Set the fixed height of the footer here */
+    line-height: 45px; /* Vertically center the text there */
+}
+.foot-container {
+    background-color: #c5c5c5;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/*
+.footer {
+    background-color: #adb5bd;
+    padding-top: 0.2em;
+    min-height: 45px;
+}
+html,body,.main-wrapper {
+    height: calc(100vh - 45px);
+}*/

@@ -1,0 +1,46 @@
+{% load i18n %}
+{% if guest %}
+<form method="POST" action="{% url "orders:step2" %}">
+{% else %}
+<form method="POST" action="{% url "accounts:register" %}">
+{% endif %}
+    {% csrf_token %}
+    {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+    {% endif %}
+    <div class="form-group col-12">
+        <label for="first_name">{% trans "First Name" %}</label>
+        <input type="text" name="first_name" class="form-control" value="{{ form.first_name.value  }}" required>
+    </div>
+    <div class="form-group col-12">
+        <label for="last_name">{% trans "Last Name" %}</label>
+        <input type="text" name="last_name" class="form-control" value="{{ form.last_name.value }}" required>
+    </div>
+    <div class="row from-group col-12">
+        <div class="form-group col-8">
+            <label for="email">{% trans "Email" %}</label>
+            <input type="email" name="email" class="form-control" value="{{ form.email.value }}" required>
+        </div>
+        <div class="form-group col-4">
+            <label for="gender">{% trans "Gender" %}</label>
+            <select name="gender" class="form-control" required>
+                <option value="M" >{% trans "Male" %}</option>
+                <option value="F" {% if form.gender.value == "F" %}selected{% endif %}>{% trans "Female" %}</option>
+            </select>
+        </div>
+    </div>
+    {% if not guest %}
+        <div class="form-group col-12">
+            <label for="password1">{% trans "Password" %}</label>
+            <input type="password" name="password1" class="form-control" placeholder="hunter2" required>
+        </div>
+        <div class="form-group col-12">
+            <label for="password2">{% trans "Password confirmation" %}</label>
+            <input type="password" name="password2" class="form-control" required>
+        </div>
+    {% endif %}
+    <div class="row form-group col-12">
+        <div class="col-lg-9"></div>
+        <button type="submit" class="btn btn-primary btn-block col-lg-3">{% trans "Confirm" %}</button>
+    </div>
+</form>

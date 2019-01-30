@@ -1,0 +1,54 @@
+{% load i18n %}
+
+{% if user %}
+    <form method="POST" action="{% url "accounts:edit_user" %}">
+{% else %}
+    <form method="POST" action="{% url "accounts:edit_traveler" traveler_id=id %}">
+{% endif %}
+{% csrf_token %}
+<div class="form-group row">
+    <div class="col-md-12">
+        <label for="first_name">{% trans "First name" %}: </label>
+        <input name="first_name" class="form-control" type="text" value="{{ form.first_name.value }}" required>
+    </div>
+    <div class="col-md-12">
+        <label for="last_name">{% trans "Last name" %}: </label>
+        <input name="last_name" class="form-control" type="text" value="{{ form.last_name.value }}" required>
+    </div>
+    {% if user %}
+        <div class="col-md-4">
+            <label>{% trans "Gender" %}</label>
+            <select name="gender" class="form-control" required>
+                <option value="M">{% trans "Male" %}</option>
+                <option value="F" {% if form.gender.value == "F" %}selected{% endif %}>{% trans "Female" %}</option>
+            </select>
+        </div>
+        <div class="col-md-8"></div>
+    {% else %}
+        <div class="col-md-6">
+            <label for="email">{% trans "Email" %}: </label>
+            <input name="email" class="form-control" type="text" value="{{ form.email.value }}" required>
+        </div>
+        <div class="col-md-6">
+            <label for="phone_num">{% trans "Phone number" %}: </label>
+            <input name="phone_num" class="form-control" type="text" value="{{ form.ssn.value }}">
+        </div>
+        <div class="col-md-4">
+            <label for="ssn">{% trans "Ssn" %}: </label>
+            <input name="ssn" class="form-control" type="text" value="{{ form.ssn.value }}" required>
+        </div>
+        <div class="col-md-4">
+            <label for="birthday">{% trans "Birthday" %}: </label>
+            <input name="birthday" class="form-control" type="date" value="{{ form.birthday.value }}">
+        </div>
+        <div class="col-md-4">
+            <label>{% trans "State" %}: </label>
+            {{ form.state }}
+        </div>
+    {% endif %}
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:1em">{% trans "Submit" %}</button>
+    </div>
+</div>
+<br>
+</form>

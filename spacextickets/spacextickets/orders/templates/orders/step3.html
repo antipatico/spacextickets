@@ -1,0 +1,29 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+
+{% block header %}<h1>{% trans "Payment" %}</h1>{% endblock header %}
+{% block content %}
+    <div>
+        <div class="row">
+            <div class="col-md-6 col-6"><h3>{% trans "Trip" %}</h3></div>
+            <div class="col-md-3 col-3"><h3>{% trans "Seats" %}</h3></div>
+            <div class="col-md-3 col-3"><h3>{% trans "Price" %}</h3></div>
+        </div>
+    {% for trip, infos in prices_list.items %}
+        <div class="row">
+            <div class="col-md-6 col-8">{{ trip }}</div>
+            <div class="col-md-3 col-2">{{ infos.1 }}</div>
+            <div class="col-md-3 col-2">{{ infos.0 }}</div>
+        </div>
+    {% endfor %}
+    <hr/>
+        <div class="row">
+            <div class="col-md-6 col-8"><strong>{% trans "Total" %}</strong></div>
+            <div class="col-md-3 col-2"></div>
+            <div class="col-md-3 col-2">{{ total }}</div>
+        </div>
+    </div>
+    <form style="margin-top:1em" action="{% url "orders:finalize" %}">
+        <button class="btn btn-primary btn-block">{% trans "Pay" %}</button>
+    </form>
+{% endblock content %}

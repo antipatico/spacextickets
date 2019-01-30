@@ -1,0 +1,42 @@
+{% extends "core/base_site.html" %}
+{% load i18n %}
+
+{% block additionalmeta %}
+    {{ block.super }}
+    {% if success %}
+        <meta http-equiv="refresh" content="3;url={% url "core:index" %}" />
+    {% endif %}
+{% endblock %}
+
+{% block subtitle %}{% trans "register" %}{% endblock %}
+
+{% block header %}
+    <div class="form-group col-12">
+        <h2>{% trans "Register" %}</h2>
+    </div>
+{% endblock %}
+{% block content %}
+    {% if success %}
+        <div class="alert alert-success">
+            {% trans "Your registration went through successfully!" %}
+        </div>
+    {% elif not request.user.is_authenticated %}
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        {{ error|escape }}<br/>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    {{ error|escape }}<br/>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% include "accounts/register_widget.html" with guest=False next=next form=form %}
+    {% else %}
+        <div class="alert alert-warning">
+            {% trans "You are already registered!" %}
+        </div>
+    {% endif %}
+{% endblock %}
