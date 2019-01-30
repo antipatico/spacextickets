@@ -72,7 +72,7 @@ Developed using PyCharm, Python 3, Django, Bootstrap and JQuery.
 2. Browse `host:port`
 
 ## License
-This project is licensed under the VRLFSC version 1.
+This project is licensed under the VRLFSC version 1.1.
 You can find the full license under the file LICENSE.txt
 
 ## Authors
